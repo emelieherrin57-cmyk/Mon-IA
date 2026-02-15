@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Mon IA</title>
+</head>
+<body style="font-family:Arial; text-align:center; background:#f4f4f4;">
+
+  <h1>🤖 Mon IA personnelle</h1>
+  <p>Bienvenue dans mon assistant intelligent</p>
+
+  <input id="q" placeholder="Écris ici..." style="width:80%; padding:10px;"><br><br>
+  <button onclick="parler()">Envoyer</button>
+
+  <p id="r"></p>
+
+  <script>
+    function parler(){
+      let q = document.getElementById("q").value;
+      document.getElementById("r").innerHTML = "Tu as écrit : " + q;
+    }
+  </script>
+
+</body>
+</html>
