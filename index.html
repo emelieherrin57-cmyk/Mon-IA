@@ -55,21 +55,30 @@ function parler(){
   let r = "";
 
   if(q.includes("salut") || q.includes("bonjour")){
-    r = "Salut 👋 Je suis ton IA personnelle.";
+    r = "Salut 👋 Je suis ton IA personnelle. Pose-moi une question.";
   }
   else if(q.includes("ça va")){
-    r = "Oui très bien 😄 Et toi ?";
+    r = "Oui ça va très bien 😄 Et toi ?";
   }
   else if(q.includes("ton nom")){
-    r = "Je suis ton assistant intelligent personnel.";
+    r = "Je suis ton assistant intelligent personnel 🤖";
   }
   else if(q.includes("aide")){
-    r = "Je peux discuter, répondre, expliquer et apprendre.";
+    r = "Je peux discuter, expliquer, aider, conseiller et apprendre avec toi.";
+  }
+  else if(q.includes("argent")){
+    r = "Je peux te proposer des idées pour gagner de l'argent en ligne.";
+  }
+  else if(q.includes("internet")){
+    r = "Je peux te proposer des applications utiles pour internet.";
   }
   else{
-    r = "J'ai compris : " + q;
+    r = "Intéressant 🤔 Dis-m'en plus...";
   }
 
+  document.getElementById("réponse").innerHTML = r;
+}
+      </script>
   document.getElementById("reponse").innerHTML = r;
 }
 </script>
