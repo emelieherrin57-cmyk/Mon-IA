@@ -1,25 +1,78 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Mon IA</title>
+  <title>Mon IA Personnelle</title>
+  <style>
+    body{
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+    #box{
+      background: white;
+      padding: 15px;
+      max-width: 500px;
+      margin: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input{
+      width: 80%;
+      padding: 10px;
+      font-size: 16px;
+    }
+    button{
+      padding: 10px 15px;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    #reponse{
+      margin-top: 15px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
 </head>
-<body style="font-family:Arial; text-align:center; background:#f4f4f4;">
 
+<body>
+
+<div id="box">
   <h1>🤖 Mon IA personnelle</h1>
-  <p>Bienvenue dans mon assistant intelligent</p>
+  <p>Parle avec ton assistant intelligent</p>
 
-  <input id="q" placeholder="Écris ici..." style="width:80%; padding:10px;"><br><br>
+  <input id="question" placeholder="Écris ici...">
+  <br>
   <button onclick="parler()">Envoyer</button>
 
-  <p id="r"></p>
+  <div id="reponse"></div>
+</div>
 
-  <script>
-    function parler(){
-      let q = document.getElementById("q").value;
-      document.getElementById("r").innerHTML = "Tu as écrit : " + q;
-    }
-  </script>
+<script>
+function parler(){
+  let q = document.getElementById("question").value.toLowerCase();
+  let r = "";
+
+  if(q.includes("salut") || q.includes("bonjour")){
+    r = "Salut 👋 Je suis ton IA personnelle.";
+  }
+  else if(q.includes("ça va")){
+    r = "Oui très bien 😄 Et toi ?";
+  }
+  else if(q.includes("ton nom")){
+    r = "Je suis ton assistant intelligent personnel.";
+  }
+  else if(q.includes("aide")){
+    r = "Je peux discuter, répondre, expliquer et apprendre.";
+  }
+  else{
+    r = "J'ai compris : " + q;
+  }
+
+  document.getElementById("reponse").innerHTML = r;
+}
+</script>
 
 </body>
 </html>
