@@ -85,3 +85,49 @@ function parler(){
 
 </body>
 </html>
+<div style="display:flex; height:100vh;">
+
+  <!-- MENU GAUCHE -->
+  <div style="width:200px; background:#1e1e1e; color:white; padding:10px;">
+    <h3>📂 Menu</h3>
+    <button onclick="changerMode('chat')">💬 Discussion</button><br><br>
+    <button onclick="changerMode('internet')">🌐 Internet</button><br><br>
+    <button onclick="changerMode('argent')">💰 Argent</button><br><br>
+    <button onclick="changerMode('outils')">⚙️ Outils</button><br><br>
+    <button onclick="changerMode('apprendre')">📚 Apprendre</button>
+  </div>
+
+  <!-- ZONE CHAT -->
+  function parler(){
+  let q = document.getElementById("question").value.toLowerCase();
+  let r = "";
+
+  if(mode == "chat"){
+    r = "Tu as dit : " + q;
+  }
+
+  if(mode == "internet"){
+    r = "🌐 Mode Internet activé : je peux te proposer des sites, applis, astuces web.";
+  }
+
+  if(mode == "argent"){
+    r = "💰 Mode Argent activé : je peux proposer des idées pour gagner de l'argent.";
+  }
+
+  if(mode == "outils"){
+    r = "⚙️ Mode Outils activé : je peux proposer des outils utiles.";
+  }
+
+  if(mode == "apprendre"){
+    r = "📚 Mode Apprendre activé : je peux t'expliquer tout simplement.";
+  }
+
+  document.getElementById("réponse").innerHTML = r;
+}let mode = "chat";
+
+function changerMode(m){
+  mode = m;
+  document.getElementById("réponse").innerHTML =
+  "Mode activé : " + m;
+}
+  <div style="flex:1; padding:20px; text-align:center;">
