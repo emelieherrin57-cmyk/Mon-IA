@@ -131,3 +131,53 @@ function changerMode(m){
   "Mode activé : " + m;
 }
   <div style="flex:1; padding:20px; text-align:center;">
+
+    <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Mon IA</title>
+</head>
+
+<body style="text-align:center;font-family:Arial;">
+
+<h2>🤖 Mon IA personnelle</h2>
+
+<input id="q" placeholder="Écris ici..." style="width:80%;padding:10px;"><br><br>
+<button onclick="parler()">Envoyer</button>
+
+<div id="chat" style="margin-top:20px;text-align:left;"></div>
+
+<script>
+let historique = "";
+
+function parler(){
+  let q = document.getElementById("q").value;
+  let r = "";
+
+  if(q.toLowerCase().includes("salut")){
+    r = "Salut 👋 Comment tu vas ?";
+  }
+  else if(q.toLowerCase().includes("ça va")){
+    r = "Oui ça va bien 😄";
+  }
+  else if(q.toLowerCase().includes("ton nom")){
+    r = "Je suis ton IA personnelle 🤖";
+  }
+  else{
+    r = "Tu as dit : " + q;
+  }
+
+  historique += "👤 " + q + "<br>🤖 " + r + "<br><br>";
+  document.getElementById("chat").innerHTML = historique;
+
+  let voix = new SpeechSynthesisUtterance(r);
+  voix.lang = "fr-FR";
+  speechSynthesis.speak(voix);
+
+  document.getElementById("q").value = "";
+}
+</script>
+
+</body>
+</html>
